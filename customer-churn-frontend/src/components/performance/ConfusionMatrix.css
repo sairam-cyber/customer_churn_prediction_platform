@@ -1,0 +1,31 @@
+/* src/components/performance/ConfusionMatrix.css */
+.matrix-container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    text-align: center;
+  }
+  .matrix-cell {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .label-x, .label-y { font-weight: bold; }
+  .label-y { grid-column: 1 / 2; }
+  .label-x { grid-row: 1 / 2; }
+  .matrix-cell .value { font-size: 1.5rem; font-weight: 700; }
+  .matrix-cell .label { font-size: 0.9rem; color: #6b7280; }
+  
+  .matrix-cell.green { background-color: #d1fae5; color: #065f46; }
+  .matrix-cell.red { background-color: #fee2e2; color: #991b1b; }
+  .matrix-cell.orange { background-color: #ffedd5; color: #9a3412; }

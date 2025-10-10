@@ -1,0 +1,115 @@
+/* src/pages/Predictor.css - Dark, glassy redesign */
+
+.predictor-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.predictor-container h2 {
+  margin: 0 0 6px 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.predictor-container p {
+  margin-top: 0;
+  color: var(--text-muted);
+}
+
+.predictor-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .predictor-content {
+    grid-template-columns: 6fr 6fr;
+  }
+}
+
+.predictor-form,
+.prediction-results {
+  background: linear-gradient(180deg, rgba(18, 26, 43, 0.65), rgba(18, 26, 43, 0.35));
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.predictor-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.predictor-form .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.predictor-form .form-group input,
+.predictor-form .form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: rgba(2, 6, 23, 0.25);
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.predictor-form button {
+  margin-top: 6px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.predictor-form button:hover:not(:disabled) {
+  background-color: var(--secondary-color);
+}
+
+.predictor-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: var(--red);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.prediction-results .results-display {
+  margin-top: 8px;
+  background: linear-gradient(180deg, rgba(18, 26, 43, 0.55), rgba(18, 26, 43, 0.25));
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.prediction-results h3 {
+  margin-top: 0;
+}
+
+.strategy-recommendation {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.strategy-recommendation h4 {
+  margin: 0 0 6px 0;
+  color: var(--text-muted);
+}

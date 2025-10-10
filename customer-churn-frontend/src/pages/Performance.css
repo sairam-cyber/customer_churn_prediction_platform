@@ -1,0 +1,38 @@
+/* src/pages/Performance.css */
+.performance-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 1024px) {
+    .performance-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.metrics-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.metrics-card h4 {
+    margin-top: 0;
+}
+.metrics-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.metrics-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.metrics-card li:last-child {
+    border-bottom: none;
+}
+.metrics-card span {
+    color: #6b7280;
+}

@@ -1,0 +1,91 @@
+/* src/pages/Signup.css - replace placeholder with minimalist dark styling */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.signup-form {
+  background: linear-gradient(180deg, rgba(18, 26, 43, 0.65), rgba(18, 26, 43, 0.35));
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 540px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.signup-form h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.signup-form .subtitle {
+  color: var(--text-muted);
+  margin-bottom: 26px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(2, 6, 23, 0.25);
+  color: var(--text-light);
+}
+
+.file-upload-area {
+  margin: 12px 0 20px;
+}
+
+.file-label {
+  display: block;
+  padding: 14px;
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: rgba(2, 6, 23, 0.2);
+}
+
+#dataset-upload {
+  display: none;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.login-link {
+  margin-top: 16px;
+  color: var(--text-muted);
+}
+
+.login-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}

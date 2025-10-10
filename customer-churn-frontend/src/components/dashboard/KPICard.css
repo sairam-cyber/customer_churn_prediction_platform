@@ -1,0 +1,28 @@
+/* src/components/dashboard/KPICard.css */
+.kpi-card {
+    background: linear-gradient(180deg, rgba(18, 26, 43, 0.65), rgba(18, 26, 43, 0.35));
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .kpi-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+  }
+  
+  .kpi-title {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .kpi-value {
+    margin: 5px 0 0 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
