@@ -2,11 +2,8 @@
 .landing-container {
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     color: var(--text-light);
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(0, 105, 137, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(234, 235, 237, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(0, 105, 137, 0.08) 0%, transparent 50%),
-      var(--background-color);
+    /* This will now be #000000 from index.css */
+    background: var(--background-color);
     position: relative;
     overflow-x: hidden;
   }
@@ -16,6 +13,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
+    /* This will now be #000000 from index.css */
     background-color: var(--background-elevated);
     border-bottom: 1px solid var(--border-color);
   }
@@ -39,16 +37,7 @@
   .landing-nav .nav-link:hover {
     color: var(--primary-color);
   }
-  
-  .landing-nav .signup-btn {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 10px 20px;
-    border-radius: 6px;
-  }
-  .landing-nav .signup-btn:hover {
-    background-color: var(--secondary-color);
-  }
+
   
   .landing-main {
     text-align: center;
@@ -187,22 +176,6 @@
     z-index: 1;
   }
   
-  .cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.2s;
-  }
-  
-  .cta-button:hover {
-    background-color: var(--secondary-color);
-  }
-  
   .features-section {
     padding: 40px 20px 20px;
     background: transparent;
@@ -290,3 +263,190 @@
     font-weight: 600;
     font-size: 0.85rem;
   }
+  /* --- ADD THESE STYLES for the new Spline Hero --- */
+
+.spline-card {
+  width: 100%;
+  height: 500px;
+  /* UPDATED: Set to solid black */
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 60px;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.spline-spotlight {
+  top: -20px; /* -top-40 */
+  left: 0; /* left-0 */
+}
+
+@media (min-width: 768px) { /* md */
+  .spline-spotlight {
+    left: 240px; /* md:left-60 */
+    top: -80px; /* md:-top-20 */
+  }
+}
+
+.spline-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .spline-card-content {
+    flex-direction: row;
+  }
+}
+
+.spline-text-content {
+  flex: 1;
+  padding: 2rem; /* p-8 */
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spline-title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #FAFAFA, #A3A3A3); /* from-neutral-50 to-neutral-400 */
+}
+
+@media (min-width: 768px) {
+  .spline-title {
+    font-size: 3rem; /* md:text-5xl */
+  }
+}
+
+.spline-description {
+  margin-top: 1rem; /* mt-4 */
+  color: #D4D4D4; /* text-neutral-300 */
+  max-width: 32rem; /* max-w-lg */
+  font-size: 1.15rem;
+  min-height: 100px; /* Added to prevent layout shift during typing */
+}
+
+.spline-scene-container {
+  flex: 1;
+  position: relative;
+  min-height: 250px; /* Ensure it has a min height on mobile */
+}
+
+.spline-scene {
+  width: 100%;
+  height: 100%;
+}
+
+/* Make existing hero-actions work inside new hero */
+.spline-text-content .hero-actions {
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* --- FIXED Button CSS --- */
+.btn {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition: color 250ms;
+  text-decoration: none; /* Added this line */
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    /* Top-left */ var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+    /* Top-left */ calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: #fff;
+}

@@ -1,60 +1,71 @@
 /* src/components/layout/Sidebar.css */
 .sidebar {
-    width: 250px;
-    background-color: var(--sidebar-bg);
-    color: var(--text-light);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    position: fixed;
-    border-right: 1px solid var(--border-color);
-  }
-  
-  .sidebar-header {
-    padding: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .sidebar-nav {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-  }
-  
-  .sidebar-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: background-color 0.2s;
-    border-left: 3px solid transparent;
-  }
-  
-  .sidebar-nav a:hover {
-    background-color: rgba(51, 65, 85, 0.5);
-  }
-  
-  .sidebar-nav a.active {
-    background-color: rgba(234, 235, 237, 0.1);
-    border-left-color: var(--accent-color);
-    font-weight: 600;
-  }
-  
-  .sidebar-footer {
-    padding: 20px;
-    border-top: 1px solid var(--border-color);
-  }
-  
-  .sidebar-footer a {
-    color: var(--text-light);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  /* UPDATED: Set default text color to dark for contrast */
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border-color);
+  /* This will now inherit the dark color from .sidebar */
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.sidebar-nav a {
+  /* UPDATED: Set link color to dark */
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.2s;
+  border-left: 3px solid transparent;
+  /* UPDATED: Make text bold */
+  font-weight: 600;
+}
+
+.sidebar-nav a:hover {
+  /* UPDATED: Use a subtle dark overlay for hover on light bg */
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-nav a.active {
+  /* UPDATED: Use a slightly darker overlay for active state */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* UPDATED: Use dark border color */
+  border-left-color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.sidebar-footer a {
+  /* UPDATED: Set link color to dark */
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* UPDATED: Make text bold */
+  font-weight: 600;
+}

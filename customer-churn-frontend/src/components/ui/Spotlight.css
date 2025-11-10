@@ -1,0 +1,25 @@
+/* src/components/ui/Spotlight.css */
+.spotlight {
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  height: 169%;
+  width: 138%;
+  opacity: 0;
+  animation: spotlight-animation 2s ease-out 0.5s forwards;
+}
+
+@media (min-width: 1024px) { /* lg */
+  .spotlight {
+    width: 84%;
+  }
+}
+
+@keyframes spotlight-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

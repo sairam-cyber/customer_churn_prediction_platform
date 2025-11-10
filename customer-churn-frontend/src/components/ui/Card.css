@@ -1,0 +1,43 @@
+/* src/components/ui/Card.css */
+.card {
+  --card-bg: var(--background-elevated, #1a1a1a);
+  --card-foreground: var(--text-light, #eaebed);
+  --card-border: var(--border-color, #374151);
+  
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  color: var(--card-foreground);
+  box-shadow: var(--shadow, 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06)); /* shadow-sm */
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem; /* space-y-1.5 */
+  padding: 1.5rem; /* p-6 */
+}
+
+.card-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  line-height: 1; /* leading-none */
+  letter-spacing: -0.025em; /* tracking-tight */
+}
+
+.card-description {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--text-muted, #9ca3af); /* text-muted-foreground */
+}
+
+.card-content {
+  padding: 1.5rem; /* p-6 */
+  padding-top: 0; /* pt-0 */
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem; /* p-6 */
+  padding-top: 0; /* pt-0 */
+}

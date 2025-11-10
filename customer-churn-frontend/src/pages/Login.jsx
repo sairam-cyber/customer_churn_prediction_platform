@@ -59,7 +59,7 @@ const Login = () => {
     <div className="login-container">
       {!showForgotPassword ? (
         <form className="login-form" onSubmit={handleSubmit}>
-          <h2>🔑 Welcome Back!</h2>
+          <h2> Welcome Back!</h2>
           <p className="subtitle">Log in to access your dashboard.</p>
 
           {error && <p className="error-message">{error}</p>}
@@ -67,7 +67,7 @@ const Login = () => {
           <div className="input-group">
             <input
               type="email"
-              placeholder="📧 Email Address"
+              placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -76,14 +76,15 @@ const Login = () => {
           <div className="input-group">
             <input
               type="password"
-              placeholder="🔒 Password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button type="submit" className="login-button" disabled={loading}>
-            {loading ? '⏳ Logging In...' : '🚀 Log In'}
+          {/* UPDATED className */}
+          <button type="submit" className="btn" disabled={loading}>
+            {loading ? 'Logging In...' : 'Log In'}
           </button>
           
           <div className="login-links">
@@ -92,16 +93,16 @@ const Login = () => {
               className="forgot-password-link"
               onClick={() => setShowForgotPassword(true)}
             >
-              🔓 Forgot Password?
+              Forgot Password?
             </button>
             <p className="signup-link">
-              Don't have an account? <a href="/signup">✨ Sign up</a>
+              Don't have an account? <a href="/signup">Sign up</a>
             </p>
           </div>
         </form>
       ) : (
         <form className="login-form" onSubmit={handleForgotPassword}>
-          <h2>🔓 Reset Password</h2>
+          <h2>Reset Password</h2>
           <p className="subtitle">Enter your email address and we'll send you a link to reset your password.</p>
 
           {forgotMessage && <p className={`forgot-message ${forgotMessage.includes('✅') ? 'success' : 'error'}`}>{forgotMessage}</p>}
@@ -109,7 +110,7 @@ const Login = () => {
           <div className="input-group">
             <input
               type="email"
-              placeholder="📧 Enter your email address"
+              placeholder="Enter your email address"
               value={forgotEmail}
               onChange={(e) => setForgotEmail(e.target.value)}
               required
@@ -117,8 +118,9 @@ const Login = () => {
           </div>
           
           <div className="forgot-actions">
-            <button type="submit" className="login-button" disabled={forgotLoading}>
-              {forgotLoading ? '⏳ Sending...' : '📧 Send Reset Link'}
+            {/* UPDATED className */}
+            <button type="submit" className="btn" disabled={forgotLoading}>
+              {forgotLoading ? 'Sending...' : 'Send Reset Link'}
             </button>
             <button 
               type="button" 

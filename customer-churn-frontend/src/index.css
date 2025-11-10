@@ -10,10 +10,10 @@
   --error-color: #dc2626; /* red-600 */
 
   /* Elegant dark theme with ocean touches */
-  --background-color: #0a0a0a; /* deep dark */
-  --background-elevated: #1a1a1a; /* elevated dark */
-  --sidebar-bg: #006989; /* ocean sidebar */
-  --card-bg: #1a1a1a; /* card dark */
+  --background-color: #000000; /* UPDATED: deep dark */
+  --background-elevated: #000000; /* UPDATED: elevated dark */
+  --sidebar-bg: #00D5E9; /* UPDATED: bright aqua blue */
+  --card-bg: #000000; /* UPDATED: card dark */
   --text-light: #eaebed; /* dreamy text */
   --text-muted: #9ca3af; /* muted text */
   --text-dark: #eaebed; /* keep var name for compatibility */
@@ -36,11 +36,8 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(0, 105, 137, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(234, 235, 237, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(0, 105, 137, 0.08) 0%, transparent 50%),
-    var(--background-color);
+  /* This now correctly uses the #000000 variable */
+  background: var(--background-color);
   color: var(--text-light);
   min-height: 100vh;
   position: relative;
@@ -88,4 +85,115 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+/* --- ADDED FOR GLITCH LOADER --- */
+
+/* This rule centers your loader on the screen */
+#root .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--background-color);
+  z-index: 9999;
+}
+
+/* Your provided CSS (Fixed) */
+/* From Uiverse.io by andrew-demchenk0 */
+.glitch {
+  position: relative;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+  animation: shift 1s ease-in-out infinite alternate;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #8b00ff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #00e571;
+  z-index: -2;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  60% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(3px, -3px);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes shift {
+  0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
+    transform: skewX(0deg);
+  }
+
+  41% {
+    transform: skewX(10deg);
+  }
+
+  42% {
+    transform: skewX(-10deg);
+  }
+
+  59% {
+    transform: skewX(40deg) skewY(10deg);
+  }
+
+  60% {
+    transform: skewX(-40deg) skewY(-10deg);
+  }
+
+  63% {
+    transform: skewX(10deg) skewY(-5deg);
+  }
+
+  70% {
+    transform: skewX(-50deg) skewY(-20deg);
+  }
+
+  71% {
+    transform: skewX(10deg) skewY(-10deg);
+  }
 }

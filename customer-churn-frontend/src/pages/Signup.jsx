@@ -69,7 +69,7 @@ const Signup = () => {
           <input type="email" name="email" placeholder="Email Address" onChange={handleChange} required />
         </div>
         <div className="input-group">
-          <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+          <input type="Create password" name="Create password" placeholder="Create Password" onChange={handleChange} required />
         </div>
 
         <div className="file-upload-area">

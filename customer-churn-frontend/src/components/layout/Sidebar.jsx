@@ -18,16 +18,16 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h3>🛡️ ChurnGuard</h3>
+        <h3> ChurnGuard</h3>
       </div>
       <nav className="sidebar-nav">
-        <NavLink to="/dashboard"><FiGrid /> 📊 Dashboard</NavLink>
-        <NavLink to="/predictor"><FiTarget /> 🎯 Predictor</NavLink>
-        <NavLink to="/performance"><FiBarChart2 /> 📈 Performance</NavLink>
-        <NavLink to="/settings"><FiSettings /> ⚙️ Settings</NavLink>
+        <NavLink to="/dashboard"><FiGrid /> Dashboard</NavLink>
+        <NavLink to="/predictor"><FiTarget />  Predictor</NavLink>
+        <NavLink to="/performance"><FiBarChart2 />  Performance</NavLink>
+        <NavLink to="/settings"><FiSettings />  Settings</NavLink>
       </nav>
       <div className="sidebar-footer">
-        <a href="#" onClick={handleLogout}><FiLogOut /> 🚪 Logout</a>
+        <a href="#" onClick={handleLogout}><FiLogOut /> Logout</a>
       </div>
     </div>
   );
